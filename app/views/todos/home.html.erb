@@ -1,0 +1,17 @@
+<%# <%image_tag '/app/assets/images/task.webp', alt: 'icon' %>
+<%# <%= link_to image_tag('/app/assets/images/task.webp'), '/app/assets/images/task.webp' %>
+<div class = "head" style="display:inline-block">
+<h1>Todo Management App</h1>
+<%= image_tag("task.webp",:align=> "middle", alt: "like",width: "60%",height: "10%") %>
+</div>
+<%if Todo.overdue%>
+<%= render partial:"list" , locals:{ title: "Overdue",todos: Todo.overdue}%>
+<%end%>
+<%if Todo.due_today%>
+<%= render partial:"list" , locals:{ title: "Due Today",todos: Todo.due_today}%>
+<%end%>
+<%if Todo.due_later%>
+<%= render partial:"list" , locals:{ title: "Due Later",todos: Todo.due_later}%>
+<%end%>
+
+

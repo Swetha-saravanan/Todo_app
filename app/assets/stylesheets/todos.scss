@@ -1,0 +1,29 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+    font-family: system-ui;
+    font-style:inherit;
+    font-weight: bold;
+
+}
+.form {
+    text-align: center;
+    margin-right: 100px;
+    margin-top: 300px;
+
+}
+input {
+    border-radius: 10px;
+    height: 30px;
+}
+.submit {
+    border-radius: 10px;
+    height: 30px;
+    width : 70px;
+    border-left: 10px;
+    background-color: black;
+    color: white;
+}
+
+

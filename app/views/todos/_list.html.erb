@@ -1,0 +1,41 @@
+<section class="todo_section">
+<p class="title"><%= title%></p>
+<p class="count"><%= todos.count%></p>
+<%# <ul> %>
+<div class="container">
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th>Task</th>
+    <th>Date</th>
+    <th>Completed</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+<%todos.all.each do |todo|%>
+<%# <li style="display:flex"> %>
+<tbody>
+<tr>
+<td><%=todo.task%></td>
+<td><%=todo.date%></td>
+<% if todo.completed == false || todo.completed == 'null' %>
+            <td><a href="/update/<%= todo.id%>"><button style="background-color : blue , color : white">Mark as complete</button></a></td>
+            <% else %>
+                <td>Completed</td>
+            <% end %>
+<td><button class="delete" id="delete" type="submit" onclick = "Destroy(<%= todo.id%>)">Delete</button></td>
+<%# </li> %>
+<%# </ul> %>
+<%end%>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<script>
+ function Destroy(id){
+    window.location.href='delete/'+id
+ }
+</script>
+
+

@@ -1,0 +1,12 @@
+<div class ="form">
+<h1>My TodoList</h1>
+<form action="/add" method = "post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="text" name="task"placeholder="Enter your task">
+<input type ="date" name="date">
+<button class = "submit"type="submit">Submit</button>
+</form>
+<%= render partial:"list" , locals:{ title: "Overdue",todos: Todo.overdue}%>
+<%= render partial:"list" , locals:{ title: "Due Today",todos: Todo.due_today}%>
+<%= render partial:"list" , locals:{ title: "Due Later",todos: Todo.due_later}%>
+</div>
