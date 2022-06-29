@@ -3,15 +3,27 @@
 <div class = "head" style="display:inline-block">
 <h1>Todo Management App</h1>
 <%= image_tag("task.webp",:align=> "middle", alt: "like",width: "60%",height: "10%") %>
+<button onclick="redirect()"> Add task </button>
 </div>
-<%if Todo.overdue%>
-<%= render partial:"list" , locals:{ title: "Overdue",todos: Todo.overdue}%>
+<%if Todo.overdue.empty?%>
+ <%# <p></p> %>
+<% else %>
+ <%= render partial:"list" , locals:{ title: "Overdue",todos: Todo.overdue}%>
 <%end%>
-<%if Todo.due_today%>
-<%= render partial:"list" , locals:{ title: "Due Today",todos: Todo.due_today}%>
+<%if Todo.due_today.empty?%>
+ <%# <p>please add task</p> %>
+<% else %>
+ <%= render partial:"list" , locals:{ title: "Due Today",todos: Todo.due_today}%>
 <%end%>
-<%if Todo.due_later%>
-<%= render partial:"list" , locals:{ title: "Due Later",todos: Todo.due_later}%>
-<%end%>
+<%if Todo.due_later.empty?%>
 
+<%else%>
+ <%= render partial:"list" , locals:{ title: "Due Later",todos: Todo.due_later}%>
+<%end%>
+<script>
+function redirect(){
+    window.location.href = 'todos/index';
+}
+
+</script>
 

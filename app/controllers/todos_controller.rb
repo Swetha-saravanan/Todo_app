@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    render "todos/index"
+
   end
 
   def show

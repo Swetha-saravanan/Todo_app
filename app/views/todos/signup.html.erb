@@ -1,0 +1,21 @@
+<div class ="form" style="display:inline-block">
+<h1>SignUp page</h1>
+<form >
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+ <i class="fa fa-user icon" style="background: dodgerblue;">
+<input type="text" name="name" placeholder="NAME"></i>
+<input type ="email" name="email" placeholder="GMAIL" pattern="[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,}$">
+<input type= "number" name="phone_no" placeholder="PHONE NO" title="Value must be less than or equal to 9999999999" min="6000000000" max="9999999999">
+<input type = "password" id="pwd" name = "pwd" placeholder="PASSWORD">
+<input type = "password" id= "cpwd" name = "cpwd" placeholder = "CONFIRM PASSWORD">
+<button class = "submit"type="submit">Submit</button>
+</form>
+<script>
+function check() {
+    let pwd = document.getElementById("pwd").value;
+    let cpwd = document.getElementById("cpwd").value;
+    if(pwd == cpwd) {
+        window.location.href = 'users/create';
+    }
+}
+</script>

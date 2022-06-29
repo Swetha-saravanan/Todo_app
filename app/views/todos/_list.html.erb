@@ -19,9 +19,9 @@
 <td><%=todo.task%></td>
 <td><%=todo.date%></td>
 <% if todo.completed == false || todo.completed == 'null' %>
-            <td><a href="/update/<%= todo.id%>"><button style="background-color : blue , color : white">Mark as complete</button></a></td>
+            <td><a href="/update/<%= todo.id%>"><button style="background-color : blue;color : white;">Mark as complete</button></a></td>
             <% else %>
-                <td>Completed</td>
+                <td><button class="completed">Completed</button></td>
             <% end %>
 <td><button class="delete" id="delete" type="submit" onclick = "Destroy(<%= todo.id%>)">Delete</button></td>
 <%# </li> %>
